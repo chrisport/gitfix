@@ -1,0 +1,45 @@
+#!/bin/bash -e
+​
+currentBranch=$(git rev-parse --abbrev-ref HEAD)
+project=$(basename $PWD)
+commitMessage='gitfix automatic commit. To be reverted'
+case $1 in
+  develop)
+    if [ -f "lastbranch.bak" ]
+    then
+        echo "ABORT: Previously stored branch $branch would be overwritten! Please restore it first"
+        exit 1
+    fi
+    if [ "$currentBranch" = 'develop' ]
+    then
+      echo "ABORT: Must not be on develop"
+      exit 1
+    fi
+    git add --all
+    git commit -m "$commitMessage"
+    git rev-parse --abbrev-ref HEAD > lastbranch.bak
+    git checkout develop
+    echo "$project: temporarily commit $origBranch and checkout develop"
+  ;;
+  branch)
+    if [ ! -f "lastbranch.bak" ]
+    then
+      echo "ABORT: no branch found"
+      exit 1
+    fi
+    branch=$(cat lastbranch.bak)
+    if [ "$currentBranch" != 'develop' ]
+    then
+      echo "ABORT: must be on develop"
+      exit 1
+    fi
+    git checkout $branch
+    lastCommitMessage=$(git log -1 --pretty=%B)
+    if [ "$commitMessage" = "$lastCommitMessage" ]
+    then
+      git reset --soft HEAD~
+    fi
+    rm lastbranch.bak
+    echo "$project: restore $branch"
+  ;;
+esac
