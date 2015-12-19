@@ -1,6 +1,6 @@
 # gitfix
 
-"where was I..." and 20 stash entries from different branches...
+to avoid "where was I..." and 20 stash entries later...
 
 ### Quick quick
 `gitfix develop` Quickly save your working branch and change to develop, while remembering your branch.   
