@@ -6,6 +6,15 @@ to avoid "where was I..." and 20 stash entries later...
 `gitfix develop` Quickly save your working branch and change to develop, while remembering your branch.   
 `gitfix branch`  Quickly return to your last branch and restore your changes.
 
+
+### Install
+
+You can easily install with the following command:
+```
+curl -L https://github.com/chrisport/gitfix/releases/download/v0.1/gitfix > /usr/local/bin/gitfix; chmod +x /usr/local/bin/gitfix
+```
+The script will be downloaded and moved to your /usr/local/bin folder
+
 ### How?
 gitfix develop will basically autocommit your changes and reset this commit when restoring. All files will be in staged state.   
 Last branch name is stored in a file called lastbranch.bak
