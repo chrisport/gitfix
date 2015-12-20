@@ -21,4 +21,8 @@ Last branch name is stored in a file called lastbranch.bak
 
 ### TODO
 - ~~store lastbranch in a better place (outside of the git repository)~~
-- `gitfix hotfix <name>`  for directly switch to a new hotfix branch according to [git flow](https://danielkummer.github.io/git-flow-cheatsheet/)
+- not useful, therefore left out: ~~`gitfix hotfix <name>`  for directly switch to a new hotfix branch according to [git flow](https://danielkummer.github.io/git-flow-cheatsheet/)~~
+
+### Contribute
+Feel free to contribute and open merge request, please shortly describe the purpose of change (if not obvious). 
+Feel free to open issue for suggestions.
