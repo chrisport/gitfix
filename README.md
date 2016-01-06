@@ -11,7 +11,7 @@ to avoid "where was I..." and 20 stash entries later...
 
 You can easily install with the following command:
 ```
-curl -L https://github.com/chrisport/gitfix/releases/download/v0.1/gitfix > /usr/local/bin/gitfix; chmod +x /usr/local/bin/gitfix
+sudo curl -L https://github.com/chrisport/gitfix/releases/download/v0.1/gitfix > /usr/local/bin/gitfix; chmod +x /usr/local/bin/gitfix
 ```
 The script will be downloaded and moved to your /usr/local/bin folder
 
