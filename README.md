@@ -1,3 +1,5 @@
+If you are here to simplify your life, you really actually want to go here instead: https://trunkbaseddevelopment.com/
+
 # gitfix
 
 to avoid "where was I..." and 20 stash entries later...
